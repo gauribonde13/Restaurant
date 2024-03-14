@@ -1,10 +1,9 @@
-import {React, useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { HiOutlineArrowRight } from "react-icons/hi";
 
-const About = () => {
 
-    const [showMenu, setShowMenu] = useState(false);
+const About = () => {
   return (
     <>
       <section className="about" id="about">
@@ -28,15 +27,6 @@ const About = () => {
               <span>
                 <HiOutlineArrowRight />
               </span>
-
-              {showMenu && (
-            <div className="dropdown-menu">
-              {/* Your dropdown menu items */}
-              <Link to="/appetizers">Appetizers</Link>
-              <Link to="/main-courses">Main Courses</Link>
-              <Link to="/desserts">Desserts</Link>
-            </div>
-             )}
             </Link>
           </div>
           <div className="banner">

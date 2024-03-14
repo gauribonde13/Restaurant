@@ -1,8 +1,8 @@
-const express = require('express')
+const express=require("express");
+const send_reservation =require("../controllers/reservation")
 
-const sendReservation=require('../controllers/reservationController')
-const router= express.Router();
+const router = express.Router();
 
-router.post("/send",sendReservation)
+router.post("/send", send_reservation);
 
-module.exports = router
+module.exports= router;

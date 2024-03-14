@@ -1,44 +1,59 @@
-import React from "react";
+import React, { useState } from "react";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import axios from "axios";
-import { useState } from "react";
 import toast from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 
 const Reservation = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
-  const [email, setEmail] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [email, setEmail] = useState("");
   const [phone, setPhone] = useState(0);
   const navigate = useNavigate();
+  
+
 
   const handleReservation = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post(
-        "/api/reserUser/send", // Use the relative path with the proxy
-        { firstName, lastName, email, phone, date, time },
+      const response = await axios.post(
+        'http://localhost:8001/api/v1/reservation/send',
+        {
+          firstName,
+          lastName,
+          date,
+          time,
+          email,
+          phone
+        },
         {
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json"
           },
-          withCredentials: true,
+          withCredentials: true
         }
       );
-      toast.success(data.message);
+      toast.success(response.data.message);
       setFirstName("");
       setLastName("");
-      setPhone(0);
+      setPhone("");
       setEmail("");
       setTime("");
       setDate("");
-      navigate("/success");
+      navigate("/Success");
     } catch (error) {
-      toast.error(error.response.data.message);
+      if (error.response && error.response.data && error.response.data.message) {
+        toast.error(error.response.data.message);
+      } else {
+        toast.error("An error occurred while processing your request.");
+      }
     }
   };
+  
+  
+  
 
   return (
     <section className="reservation" id="reservation">
@@ -95,7 +110,7 @@ const Reservation = () => {
                 />
               </div>
               <button type="submit" onClick={handleReservation}>
-                RESERVE NOW{" "}
+                RESERVE NOW{""}
                 <span>
                   <HiOutlineArrowNarrowRight />
                 </span>

@@ -8,22 +8,8 @@
   padding: 0;
 }
 ::-webkit-scrollbar{
-  width: 5px;
+  display: none;
 }
-
-::-webkit-scrollbar-thumb{
-  background: #fff;
-}
-.container{
-  overflow: auto;
-}
-
-.container-inner {
-  font-size: 16px;
-  color: #fff;
-}
-
-
 
 /********************** HERO SECTION COMPONENT STYLING **************************/
 /**********************************************************************************************************************/
@@ -116,7 +102,7 @@ nav svg {
     display: none;
   }
   nav .hamburger {
-    display:flex;
+    display: flex;
   }
   nav .navLinks {
     position: absolute;
@@ -166,21 +152,7 @@ nav svg {
     border-radius: 0;
   }
 }
-
-.logo span {
-  margin-right: 100px; /* Adjust the value as per your preference */
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px; /* Adjust the value as needed */
-  font-size: 2rem;
-  justify-content: center;
-}
-
-/*************************************dropdown our menu***********/
-
-
+/**********************************************************************************************************************/
 
 /********************** HERO SECTION COMPONENT STYLING **************************/
 /**********************************************************************************************************************/
@@ -190,7 +162,7 @@ nav svg {
   min-height: 80vh;
   justify-content: space-between;
   align-items: center;
-  
+  /* background: url(/background.svg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
@@ -214,7 +186,7 @@ nav svg {
   width: 100%;
 }
 .heroSection .container .banner .title {
-  font-size: 5.5rem;
+  font-size: 8.5rem;
   font-weight: 200;
 }
 .heroSection .container .banner .textAndLogo {
@@ -229,7 +201,7 @@ nav svg {
   top: 0;
 }
 .heroSection .container .banner:first-child .dishes_title {
-  display:none;
+  display: none;
 }
 .heroSection .container .banner:first-child .imageBox {
   width: 50%;
@@ -238,26 +210,25 @@ nav svg {
   width: 100%;
 }
 .heroSection .container .banner .imageBox img {
-  width: 200px;
-  height: 285px;
+  width: 300px;
+  height: 385px;
 }
 .heroSection .container .banner:last-child .imageBox {
-  text-align:end;
+  text-align: end;
 }
-.heroSection .container .banner {
-  flex: 4;
+.heroSection .container .banner:last-child {
+  flex: 1;
 }
 @media (max-width: 1280px) {
   .heroSection .container {
     width: 100%;
     min-width: fit-content;
     padding: 30px 20px;
-    overflow: auto;
   }
 }
 @media (max-width: 1072px) {
   .heroSection .container .banner .title {
-    font-size: 3.5rem;
+    font-size: 6.5rem;
   }
   .heroSection .container .banner .imageBox img {
     width: 250px;
@@ -373,7 +344,7 @@ nav svg {
   justify-content: space-evenly;
 }
 .about .container .banner img {
-  width: 60%
+  width: 100%;
 }
 .heading {
   font-weight: 200;
@@ -886,8 +857,7 @@ footer .container .banner .right {
   padding: 30px 20px;
   justify-content: center;
   align-items: center;
- 
-
+  /* background: url(/reserve.svg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
@@ -1077,7 +1047,7 @@ footer .container .banner .right {
   min-height: 100vh;
   justify-content: center;
   align-items: center;
- 
+  /* background: url(/background.svg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: right;
